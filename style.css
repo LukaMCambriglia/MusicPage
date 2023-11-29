@@ -1,0 +1,385 @@
+header {
+    display: flex;
+    width: 80%;
+    margin-left: auto;
+}
+
+.isologotipo {
+    display: flex;
+    margin-top: -4em;
+    margin-left: 2em;
+}
+
+
+.isologotipo img {
+ width: 2em;
+ height: 2em;
+ margin-top: 1em;
+ margin-right: 1em;
+}
+
+header h2 {
+    margin-left: 0.5em;
+    margin-top: 0em;
+    font-family: 'Indie Flower', cursive;
+
+}
+
+
+header nav {
+    display: flex;
+    
+}
+
+header nav p {
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 2.1em;
+    font-size: 15px;
+}
+
+body {
+    
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: whitesmoke;
+}
+
+.home {
+    margin-left: -4em;
+}
+
+.iniciarsesion {
+    margin-left: auto;
+}
+
+
+.albums {
+ margin-right: 1em;  
+    
+}
+
+.seccionalbum {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+}
+
+.seccionartistas {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+}
+
+
+.albums p {
+    color: grey;
+    font-size: 13px;
+    margin-top: -1em; 
+}
+
+
+.albums img {
+    width: 170px;
+    border-radius: 1em;
+}
+
+.seccionIzquierda {
+    width: 71%;
+    height: auto;
+    position: relative;
+    border-right: 1px solid grey;
+    font-size: 14px;
+    box-sizing: border-box;
+    }
+
+    .navegacionDePagina {
+        display: flex;
+        align-items: center;
+        width: 70%;
+        margin-left: 0; /* Ajuste del margen izquierdo */
+        margin-bottom: 2em;
+        text-decoration: none;
+        line-height: 0em;
+        
+    }
+    
+    .navegacionDePagina a {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+    
+    
+    .textonav {
+        margin-top: 0; /* Ajuste del margen superior */
+    }
+
+    
+.seccionIzquierda h3 { 
+    margin-top: 2em;
+    margin-bottom: 1em;
+    color: grey;
+}
+
+.navegacionDePagina i.material-symbols-outlined {
+    font-size: 30px;
+    margin-right: 10px;
+    color: #000000;
+    }
+
+
+.vistaVentana i.material-symbols-outlined {
+    color: #D9DDE5;
+    margin-top: -0.1em;
+}
+
+
+.seccionPrincipal {
+    display: grid;
+    grid-template-columns: 25% auto;
+    grid-auto-rows: minmax(100px, auto);
+    justify-items: stretch;
+    gap: 1em;
+}
+
+.navegacionDePagina a.textonav {
+    text-decoration: none;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.slogan {
+    display: flex;
+    align-items: center;
+}
+
+.slogantexto {
+    margin-right: 10px;
+}
+
+#descubrir {
+    color: #FEBBBB;
+}
+
+.slogan img {
+    margin-left: 2em;
+    width: 280px;
+    height: auto;
+    position: relative;
+    justify-content: right;
+}
+
+.botones {
+    display: flex;
+    align-items: center;
+    margin-top: -0.5em;
+}
+
+#explorar {
+    background-color: #FEBBBB;
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 2em;
+    color: azure;
+}
+
+#registrar {
+    margin-left: 1em;
+    
+}
+
+.cancionessonando {
+    color: grey;
+    border-bottom: 1px solid grey;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.texto-encabezadocancionessonando {
+
+    border-collapse: collapse;
+    padding: 10px;
+
+}
+
+.texto-cancionessonando {
+    border-top: 1px solid grey;
+    border-collapse: collapse;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: black;
+}
+
+.texto-cancionessonando:last-child {
+    border-bottom: 1px solid gray;
+}
+
+
+ /* reproductor musica */
+ 
+ .music-player-container{
+    backdrop-filter: blur(10px);
+    height: 4em;
+    width: 100%;
+    border-radius: 10px;
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.35);
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+
+ }
+
+ .title-music-container {
+    width: 80%;
+    height: 80%;
+    width: fit-content;
+    margin-right: auto;
+
+    margin-left: 10%;
+ }
+
+ .song-title {
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+    margin-top: 0.8em;
+    margin-bottom: 0.3rem;
+ }
+
+ .song-author{
+    margin-top: 0rem;
+    margin-bottom: 0.3rrem;
+    font-size: 12px;
+    letter-spacing: 0.1px;
+ }
+
+.controls-music-container{
+    width: 80%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.progress-song-container{
+    margin-top: 0.6rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.progress-bar{
+    height: 3px;
+    border-radius: 3px;
+    width: 100%;
+    background-color: grey;
+    position: relative;
+}
+
+.progress{
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    border-radius: 3px;
+    background-color: rgb(0, 0, 0);
+}
+
+.time-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+}
+
+.time-left{
+    margin-top: 0.3rem;
+}
+
+.main-song-controls{
+    height: 30px;
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.icon{
+    height: 100%;
+    width: auto;
+    opacity: 0.6;
+    cursor: pointer;
+    margin-bottom: 1.5em;
+}
+
+.icon:hover{
+    opacity: 1;
+}
+
+audio{
+    display: none;
+}
+
+footer {
+    width: 100%;
+    margin-bottom: 10em;
+}
+
+.reproducir-cancion{
+    cursor: pointer;
+}
+
+.albuminfo {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em;
+}
+
+.imagenalbum img {
+    display: flex;
+    margin-top: 2em;
+    width: 230px;
+    border-radius: 1em;
+    margin-right: 1em;
+}
+
+.textoalbum {
+    margin: 1em;
+}
+
+
+.textoalbum h4{
+    color: grey;
+}
+
+.textoalbum span{
+    background-color: #FEBBBB;
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 2em;
+    color: azure;
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <title>Document</title>
+</head>
+<body>
+<header>
+    <nav class="navegar">
+        <p>Buscar</p>
+        <p>Mi música</p>
+        <p>Descubrir</p>
+        <p>Tendencia</p>
+    </nav>
+    <nav class="iniciarsesion">
+        <p>Modo claro</p>
+        <p>Iniciar Sesión</p>
+        <p>Registrarse</p>
+    </nav>
+</header>
+<section class="seccionPrincipal">
+<section class="seccionIzquierda">         
+    <section class="isologotipo">
+        <img src="img/music-logo-black-and-white-png-21.png">
+            <h2>AltWave</h2>
+    </section>
+    <nav>
+        <ul>
+            <h3>Menu</h3>
+            <li class="navegacionDePagina vistaVentana"><a href="index.html"><i class="material-symbols-outlined">home</i><span class="textonav">Home</span></a></li>
+            <li class="navegacionDePagina"><a href="index.html"><i class="material-symbols-outlined">queue_music</i><span class="
+                textonav">Buscar</span></a></li>
+            <li class="navegacionDePagina"><a href="index.html"><i class="material-symbols-outlined">favorite</i><span class="textonav">Descubrir</span></a></li>
+        </ul>
+        <ul>
+            <h3>Libreria</h3>
+            <li class="navegacionDePagina vistaVentana"><a href="index.html"><i class="material-symbols-outlined">home</i><span class="textonav">Mis artistas</span></a></li>
+            <li class="navegacionDePagina"><a href="index.html"><i class="material-symbols-outlined">queue_music</i><span class="textonav">Mi música</span></a></li>
+            <li class="navegacionDePagina"><a href="index.html"><i class="material-symbols-outlined">favorite</i><span class="textonav">Mis favoritas</span></a></li>
+        </ul>
+    </nav>   
+</section>
+<section class="home">
+    
+    <article class="slogan">
+        <article class="slogantexto">
+    <h3 id="descubrir">Descubre nueva música</h3>
+    <h2>Tu brújula musical hacia lo inexplorado</h2>
+    <article class="botones">
+        <p id="explorar">Explorar</p>
+        <a id="registrar" href="registrar.html">Registrarse</a>
+    </article>
+</article>
+    <img src="img/music.webp">
+    
+    </article>
+
+    <section class="seccionalbum">
+        <article class="albums">
+            <h3>Albums en Ascenso</h3>
+            <a href="onclejazz.html"> <img src="img/onclejazz.png"> </a>
+            <h4>Jinx</h4>
+            <p>Crumb</p>
+        </article>
+        <article class="albums">
+            <a href="untourablealbum.html"> <img src="img/untourablealbum.jpg">  </a>
+            <h4>Untourable Album</h4>
+            <p>Men I Trust</p>
+        </article>
+        <article class="albums">
+            <a href="thecar.html"> <img src="img/thecar.jpg">  </a>
+            <h4>The Car</h4>
+            <p>Arctic Monkeys</p>
+        </article>
+        <article class="albums">
+            <a href="onclejazz.html"> <img src="img/crumb.jpg">  </a>
+            <h4>Oncle Jazz</h4>
+            <p>Men I Trust</p>
+        </article>
+    </section>
+
+    <section class="seccionartistas">
+        <article class="albums">
+            <h3>Artistas Destacados</h3>
+            <img src="img/menitrust.png">
+            <h4>Men I Trust</h4>
+        </article>
+        <article class="albums">
+            <img src="img/The_Strokes_-_The_New_Abnormal.png">
+            <h4>The Strokes</h4>
+
+        </article>
+        <article class="albums">
+            <img src="img/tlsp.png">
+            <h4>The Last Shadow Puppets</h4>
+        
+        </article>
+        <article class="albums">
+            <img src="img/crumbb.jpg">
+            <h4>Crumb</h4>
+        </article>
+        <article class="albums">
+            <img src="img/twentyonepilots.jpg">
+            <h4>Twenty One Pilots</h4>
+        </article>
+    </section>
+
+</section>
+</section>
+
+<footer>
+<article class="music-player-container">
+    <article class="title-music-container">
+        <h4 class="song-title">Cracking</h4>
+        <span class="song-author">Crumb</span>
+    </article>
+    <article class="controls-music-container">
+        <article class="progress-song-container">
+            <article class="progress-bar">
+                <span class="progress"></span>
+            </article>
+        </article>
+        <article class="time-container">
+            <span class="time-left" id="CurrentSongTime"></span>
+            <span class="time-left" id="SongLength"></span>
+        </article>
+    </article>
+    <audio controls preload="metadata" src="musica/Cracking.mp3"></audio>
+    <article class="main-song-controls">
+        <img src="musica/backward.svg" alt="" class="icon" id="Back10">
+        <img src="musica/skipback.svg" alt="" class="icon" id="BackSong">
+        <img src="musica/play.svg" alt="" class="icon" id="PlayPause">
+        <img src="musica/skipforward.svg" alt="" class="icon" id="ForwardSong">
+        <img src="musica/forward.svg" alt="" class="icon" id="Plus10">
+    </article>
+</article>
+
+</footer>
+<script src="js.js"></script>
+</body>
+</html>
