@@ -9,6 +9,40 @@ const filasCanciones = document.querySelectorAll('.reproducir-cancion');
 let botonreproducir = document.getElementById("botonreproducir");
 
 
+// Busqueda
+let seccionHome = document.getElementById("seccionHome");
+let resultadosBusqueda = document.getElementById("resultadosBusqueda");
+let buscador = document.getElementById("buscador");
+
+buscador.addEventListener("keyup", () => {
+    console.log("Evento keyup ejecutado");
+    let valor = buscador.value.trim().toLowerCase();
+    resultadosBusqueda.innerHTML = "";
+    if (valor !== "") {
+        let albumsFiltrados = document.querySelectorAll('.albums');
+        albumsFiltrados.forEach((album) => {
+            let albumName = album.getAttribute('data-album'); 
+            let artistaName = album.getAttribute('data-artista'); 
+            if (albumName || artistaName) {
+                albumName = albumName.toLowerCase();
+                artistaName = artistaName.toLowerCase();
+
+                if (albumName.includes(valor) || artistaName.includes(valor)) {
+                    let resultadoAlbum = album.cloneNode(true);
+                    resultadosBusqueda.appendChild(resultadoAlbum);
+                }
+            }
+        });
+        if (resultadosBusqueda.innerHTML === "") {
+            seccionHome.style.display = "block"; 
+        } else {
+            seccionHome.style.display = "none"; 
+        }
+    } else {
+        seccionHome.style.display = "block";
+    }
+});
+
 // Modo oscuro
 const modoActual = localStorage.getItem('modooscuro');
 let modooscuro = document.getElementById("modooscuro");
