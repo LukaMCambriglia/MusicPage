@@ -12,14 +12,15 @@
 </head>
 <body>
 <header>
-    <nav class="navegar">
-        <p>Buscar</p>
-        <p>Mi música</p>
-        <p>Descubrir</p>
-        <p>Tendencia</p>
-    </nav>
+        <div class="barra-busqueda">
+            <span class="material-symbols-outlined">search</span>
+            <input type="text" placeholder="Buscar..." id="buscador">
+        </div>
     <nav class="iniciarsesion">
-        <p>Modo claro</p>
+        <article class="modocolor">
+            <img src="img/light-mode-svgrepo-com.svg" alt="" id="modooscuro">
+            <p>Modo claro</p>
+    </article>
         <p>Iniciar Sesión</p>
         <p>Registrarse</p>
     </nav>
@@ -27,7 +28,7 @@
 <section class="seccionPrincipal">
 <section class="seccionIzquierda">         
     <section class="isologotipo">
-        <img src="img/music-logo-black-and-white-png-21.png">
+        <img src="img/logo.svg" id="logo">
             <h2>AltWave</h2>
     </section>
     <nav>
@@ -46,72 +47,77 @@
         </ul>
     </nav>   
 </section>
-<section class="home">
+<section class="home" id="seccionHome">
     
-    <article class="slogan">
-        <article class="slogantexto">
-    <h3 id="descubrir">Descubre nueva música</h3>
-    <h2>Tu brújula musical hacia lo inexplorado</h2>
-    <article class="botones">
-        <p id="explorar">Explorar</p>
-        <a id="registrar" href="registrar.html">Registrarse</a>
-    </article>
-</article>
-    <img src="img/music.webp">
-    
-    </article>
+                <article class="slogan">
+                    <article class="slogantexto">
+                <h3 id="descubrir">Descubre nueva música</h3>
+                <h2>Tu brújula musical hacia lo inexplorado</h2>
+                <article class="botones">
+                    <p id="explorar">Explorar</p>
+                    <a id="registrar" href="registrar.html">Registrarse</a>
+                </article>
+            </article>
+                <img src="img/music.webp">
+                
+                </article>
 
-    <section class="seccionalbum">
-        <article class="albums">
-            <h3>Albums en Ascenso</h3>
-            <a href="onclejazz.html"> <img src="img/onclejazz.png"> </a>
-            <h4>Jinx</h4>
-            <p>Crumb</p>
-        </article>
-        <article class="albums">
-            <a href="untourablealbum.html"> <img src="img/untourablealbum.jpg">  </a>
-            <h4>Untourable Album</h4>
-            <p>Men I Trust</p>
-        </article>
-        <article class="albums">
-            <a href="thecar.html"> <img src="img/thecar.jpg">  </a>
-            <h4>The Car</h4>
-            <p>Arctic Monkeys</p>
-        </article>
-        <article class="albums">
-            <a href="onclejazz.html"> <img src="img/crumb.jpg">  </a>
-            <h4>Oncle Jazz</h4>
-            <p>Men I Trust</p>
-        </article>
-    </section>
+                <section class="seccionalbum">
+                    <article class="albums" data-album="Jinx" data-artista="Crumb">
+                        <h3>Albums en Ascenso</h3>
+                        <a href="onclejazz.html"> <img src="img/onclejazz.png"> </a>
+                        <h4>Jinx</h4>
+                        <p>Crumb</p>
+                    </article>
+                    <article class="albums" data-album="Untourable Album" data-artista="Men I Trust">
+                        <a href="untourablealbum.html"> <img src="img/untourablealbum.jpg">  </a>
+                        <h4>Untourable Album</h4>
+                        <p>Men I Trust</p>
+                    </article>
+                    <article class="albums" data-album="The Car" data-artista="Arctic Monkeys">
+                        <a href="thecar.html"> <img src="img/thecar.jpg">  </a>
+                        <h4>The Car</h4>
+                        <p>Arctic Monkeys</p>
+                    </article>
+                    <article class="albums" data-album="Oncle Jazz" data-artista="Men I Trust">
+                        <a href="onclejazz.html"> <img src="img/crumb.jpg">  </a>
+                        <h4>Oncle Jazz</h4>
+                        <p>Men I Trust</p>
+                    </article>
+                </section>
 
-    <section class="seccionartistas">
-        <article class="albums">
-            <h3>Artistas Destacados</h3>
-            <img src="img/menitrust.png">
-            <h4>Men I Trust</h4>
-        </article>
-        <article class="albums">
-            <img src="img/The_Strokes_-_The_New_Abnormal.png">
-            <h4>The Strokes</h4>
+                <section class="seccionartistas">
+                    <article class="albums">
+                        <h3>Artistas Destacados</h3>
+                        <img src="img/menitrust.png">
+                        <h4>Men I Trust</h4>
+                    </article>
+                    <article class="albums">
+                        <img src="img/The_Strokes_-_The_New_Abnormal.png">
+                        <h4>The Strokes</h4>
 
-        </article>
-        <article class="albums">
-            <img src="img/tlsp.png">
-            <h4>The Last Shadow Puppets</h4>
-        
-        </article>
-        <article class="albums">
-            <img src="img/crumbb.jpg">
-            <h4>Crumb</h4>
-        </article>
-        <article class="albums">
-            <img src="img/twentyonepilots.jpg">
-            <h4>Twenty One Pilots</h4>
-        </article>
-    </section>
+                    </article>
+                    <article class="albums">
+                        <img src="img/tlsp.png">
+                        <h4>The Last Shadow Puppets</h4>
+                    
+                    </article>
+                    <article class="albums">
+                        <img src="img/crumbb.jpg">
+                        <h4>Crumb</h4>
+                    </article>
+                    <article class="albums">
+                        <img src="img/twentyonepilots.jpg">
+                        <h4>Twenty One Pilots</h4>
+                    </article>
+                </section>
 
 </section>
+
+    <section id="resultadosBusqueda">
+
+    </section>
+
 </section>
 
 <footer>
@@ -140,6 +146,8 @@
         <img src="musica/forward.svg" alt="" class="icon" id="Plus10">
     </article>
 </article>
+
+
 
 </footer>
 <script src="js.js"></script>

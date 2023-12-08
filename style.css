@@ -1,3 +1,20 @@
+
+:root {
+    --color-fondo: whitesmoke;
+    --color-fondo-oscuro: black;
+    --color-texto: black;
+    --color-texto-oscuro: whitesmoke;
+    --color-texto-secundario: grey;
+    --color-texto-secundario-oscuro: white;
+    --color-botones: #FEBBBB;
+}
+
+.modooscuro {
+    --color-texto: var(--color-texto-oscuro);
+    --color-fondo: var(--color-fondo-oscuro);
+    --color-texto-secundario: var(--color-secundario-oscuro);
+}
+
 header {
     display: flex;
     width: 80%;
@@ -43,7 +60,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
-    background-color: whitesmoke;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
 }
 
 .home {
@@ -74,7 +92,7 @@ body {
 
 
 .albums p {
-    color: grey;
+    color: var(--color-texto-secundario);
     font-size: 13px;
     margin-top: -1em; 
 }
@@ -92,6 +110,7 @@ body {
     border-right: 1px solid grey;
     font-size: 14px;
     box-sizing: border-box;
+    
     }
 
     .navegacionDePagina {
@@ -102,6 +121,7 @@ body {
         margin-bottom: 2em;
         text-decoration: none;
         line-height: 0em;
+      
         
     }
     
@@ -114,24 +134,25 @@ body {
     
     .textonav {
         margin-top: 0; /* Ajuste del margen superior */
+        color: var(--color-texto);
     }
 
     
 .seccionIzquierda h3 { 
     margin-top: 2em;
     margin-bottom: 1em;
-    color: grey;
+    color: var(--color-texto-secundario);
 }
 
 .navegacionDePagina i.material-symbols-outlined {
     font-size: 30px;
     margin-right: 10px;
-    color: #000000;
+    color: var(--color-texto);
     }
 
 
 .vistaVentana i.material-symbols-outlined {
-    color: #D9DDE5;
+    color: var(--color-botones);
     margin-top: -0.1em;
 }
 
@@ -181,7 +202,7 @@ ul li a {
 }
 
 #explorar {
-    background-color: #FEBBBB;
+    background-color: var(--color-botones);
     width: 120px;
     height: 30px;
     text-align: center;
@@ -198,7 +219,7 @@ ul li a {
 }
 
 .cancionessonando {
-    color: grey;
+    color: var(--color-texto-secundario);
     border-bottom: 1px solid grey;
     border-collapse: collapse;
     width: 100%;
@@ -217,7 +238,7 @@ ul li a {
     padding: 20px;
     text-align: center;
     font-size: 18px;
-    color: black;
+    color: var(--color-texto);
 }
 
 .texto-cancionessonando:last-child {
@@ -369,11 +390,11 @@ footer {
 
 
 .textoalbum h4{
-    color: grey;
+    color: var(--color-texto-secundario);
 }
 
 .textoalbum span{
-    background-color: #FEBBBB;
+    background-color: var(--color-botones);
     width: 120px;
     height: 30px;
     text-align: center;
@@ -382,4 +403,75 @@ footer {
     justify-content: center;
     border-radius: 2em;
     color: azure;
+}
+
+.botonesreproducir {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#shuffle {
+    width: 40px;
+    margin-left: 2em;
+}
+
+.activado {
+    filter: invert(25%) sepia(100%) saturate(7459%) hue-rotate(340deg) brightness(92%) contrast(92%);
+}
+
+.modocolor {
+    display: flex;
+}
+
+#modooscuro {
+    width: 30px;
+    margin-top: 1em;
+    cursor: pointer;
+}
+
+#modooscuro:hover{
+    opacity: 0.5;
+
+  
+}
+
+.modooscuroicon {
+    filter: invert(100%);
+
+}
+
+  .barra-busqueda {
+display: flex;
+align-items: center;
+position: relative;
+color: var(--color-texto);
+margin-top: 1;
+  }
+
+  .barra-busqueda span{
+        margin-right: 0.2em;
+      }
+    
+
+  #buscador {
+    flex-grow: 1;
+    padding: 1.2%;
+    width: 20em;
+    margin-right: 10px;
+    border-radius: 12px;
+    border-width: 1.5px;
+    border-color: var(--color-texto);
+}
+
+#resultadosBusqueda {
+    display: flex;
+    margin-left: -4em;
+    margin-top: 2em;
+    justify-content: start;
+    align-items: start;
+}
+
+#resultadosBusqueda img {
+    margin-right: 2em;
 }

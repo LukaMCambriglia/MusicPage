@@ -8,6 +8,69 @@ const cancion = document.getElementById('cancion');
 const filasCanciones = document.querySelectorAll('.reproducir-cancion');
 let botonreproducir = document.getElementById("botonreproducir");
 
+
+// Busqueda
+let seccionHome = document.getElementById("seccionHome");
+let resultadosBusqueda = document.getElementById("resultadosBusqueda");
+let buscador = document.getElementById("buscador");
+
+buscador.addEventListener("keyup", () => {
+    console.log("Evento keyup ejecutado");
+    let valor = buscador.value.trim().toLowerCase();
+    resultadosBusqueda.innerHTML = "";
+    if (valor !== "") {
+        let albumsFiltrados = document.querySelectorAll('.albums');
+        albumsFiltrados.forEach((album) => {
+            let albumName = album.getAttribute('data-album'); 
+            let artistaName = album.getAttribute('data-artista'); 
+            if (albumName || artistaName) {
+                albumName = albumName.toLowerCase();
+                artistaName = artistaName.toLowerCase();
+
+                if (albumName.includes(valor) || artistaName.includes(valor)) {
+                    let resultadoAlbum = album.cloneNode(true);
+                    resultadosBusqueda.appendChild(resultadoAlbum);
+                }
+            }
+        });
+        if (resultadosBusqueda.innerHTML === "") {
+            seccionHome.style.display = "block"; // Muestra el contenido original
+        } else {
+            seccionHome.style.display = "none"; // Oculta el contenido original
+        }
+    } else {
+        seccionHome.style.display = "block"; // Muestra el contenido original cuando no hay búsqueda
+    }
+});
+//
+
+// Modo oscuro
+const modoActual = localStorage.getItem('modooscuro');
+let modooscuro = document.getElementById("modooscuro");
+let logo = document.getElementById("logo");
+
+if (modoActual === 'activo') {
+    document.documentElement.classList.add('modooscuro');
+    modooscuro.classList.add('modooscuroicon');
+    logo.classList.add('modooscuroicon');
+}
+
+modooscuro.addEventListener('click', () => {
+    document.documentElement.classList.toggle('modooscuro');
+
+    if (modooscuro.classList.contains('modooscuroicon')) {
+        modooscuro.classList.remove('modooscuroicon');
+        logo.classList.remove('modooscuroicon');
+        localStorage.setItem('modooscuro', 'inactivo');
+    } else {
+        modooscuro.classList.add('modooscuroicon');
+        logo.classList.add('modooscuroicon');
+        localStorage.setItem('modooscuro', 'activo');
+    }
+});
+
+//
+
 const calculateTime = (secs) => {
     const minutes = Math.floor(secs/60),
 seconds = Math.floor(secs % 60),
@@ -44,6 +107,33 @@ plus10 = document.getElementById('Plus10'),
 back10 = document.getElementById('Back10');
 backSong = document.getElementById('BackSong');
 forwardsong = document.getElementById('ForwardSong');
+let shuffle = document.getElementById('Shuffle');
+let loop = document.getElementById('Loop');
+let random = false;
+let enloop = false;
+
+
+shuffle.addEventListener('click', ()=>{
+
+    if(!random) {
+    shuffle.classList.add("activado");
+    random=true;
+} else {
+    shuffle.classList.remove("activado");
+    random=false;
+}
+});
+
+loop.addEventListener('click', ()=>{
+
+    if(!enloop) {
+    loop.classList.add("activado");
+    enloop = true;
+} else {
+    loop.classList.remove("activado");
+    enloop = false;
+}
+});
 
 
 backSong.addEventListener('click', ()=>{
@@ -52,7 +142,19 @@ backSong.addEventListener('click', ()=>{
 })
 
 forwardsong.addEventListener('click', ()=>{
+    const filasdeCanciones = document.querySelectorAll('.reproducir-cancion');
+    const totaldeCanciones = filasdeCanciones.length;
+
+    if(!enloop) {
+
+    if(!random) {
     currentSong = parseInt(currentSong) + 1;
+} else {
+    currentSong = Math.floor(Math.random() * totaldeCanciones);
+}
+} else {
+    currentSong = parseInt(currentSong);
+}
     reproducirSiguienteCancion(currentSong);
 })
 
@@ -106,11 +208,26 @@ function reproducirCancion(nuevaCancion) {
 
 audio.addEventListener('ended', function(event) {
     console.log('Canción terminada. Reproduciendo siguiente...');
-       
-    if(currentSong) {
-    let nextSongNumber = parseInt(currentSong) + 1;
-        reproducirSiguienteCancion(nextSongNumber);
+    const filasdeCanciones = document.querySelectorAll('.reproducir-cancion');
+    const totaldeCanciones = filasdeCanciones.length;
 
+
+    let nextSongNumber;
+    if(currentSong) {
+
+        if(!enloop) {
+            if(!random) {
+                nextSongNumber = parseInt(currentSong) + 1;
+            } else {
+                nextSongNumber = Math.floor(Math.random() * totaldeCanciones);
+            }
+        } else {
+           nextSongNumber = parseInt(currentSong);
+        }
+  
+        if(nextSongNumber!==undefined) {
+        reproducirSiguienteCancion(nextSongNumber);
+    }
     } else {
         console.error('No se pudo encontrar la fila de la canción actual');
     }
@@ -133,3 +250,40 @@ function reproducirSiguienteCancion(nextSongNumber) {
         console.log(currentSong);
     } 
 }
+
+
+
+//buscador 
+
+
+
+/*
+let resultado = document.querySelector("#resultado");
+cursos.forEach((item)=>{
+    resultado.innerHTML+=`
+        <article>
+            <h2>Título: ${item.titulo}</h2>
+            <p>Duración: ${item.duracion}</p>
+        </article>
+    `;
+});
+let buscador=document.querySelector("#buscador");
+buscador.addEventListener("keyup",()=>{
+    //1.-guardar el valor del buscador
+    let valor=buscador.value;
+    //2.-filtrar el array de cursos
+    let cursosFiltrados=cursos.filter(curso=>curso.titulo.indexOf(valor)>-1);
+    //3.-limpiar resultados
+    resultado.innerHTML="";
+    //4.-llenar resultados con los cursos filtrados
+    cursosFiltrados.forEach((item)=>{
+        resultado.innerHTML+=`
+            <article>
+                <h2>Título: ${item.titulo}</h2>
+                <p>Duración: ${item.duracion}</p>
+            </article>
+        `;
+    });
+});
+
+*/
